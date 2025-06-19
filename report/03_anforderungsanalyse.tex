@@ -1,0 +1,31 @@
+\chapter{Analyse der Anforderungen und Problembeschreibung}
+\label{cha:anforderungsanalyse}
+
+\section{Problemdefinition}
+\begin{spacing}{1.5}
+
+Die Verarbeitung personenbezogener Daten in der öffentlichen Verwaltung stellt eine signifikante Herausforderung dar, insbesondere im Spannungsfeld zwischen Datenschutzanforderungen und dem Bedarf an analytisch nutzbaren Daten. Kommunale Datenbestände enthalten eine Vielzahl sensibler Informationen, die sowohl für die tägliche Verwaltungsarbeit als auch für strategische Analysen und Planungen unerlässlich sind. Die Hauptproblematik liegt darin, wie diese Daten sicher verarbeitet und gleichzeitig für verschiedene Analysezwecke genutzt werden können, ohne die Privatsphäre der Bürger zu gefährden.
+
+Die herkömmlichen Methoden der Datenanonymisierung und Pseudonymisierung (vgl. Abschnitt \ref{sec:traditionelle-anonymisierung}) bieten zwar Ansätze, um den Schutz personenbezogener Daten zu gewährleisten, stoßen jedoch in der Praxis häufig auf Grenzen. Während Anonymisierungsverfahren darauf abzielen, personenbezogene Informationen unkenntlich zu machen, führen sie oft zu einem erheblichen Informationsverlust, der die Nützlichkeit der Daten für analytische Zwecke einschränkt. Pseudonymisierung kann zwar eine höhere Datenqualität bewahren, birgt aber weiterhin das Risiko der Re-Identifizierung, insbesondere wenn zusätzliche Informationen vorhanden sind, die zur Verknüpfung der Daten verwendet werden können. Diese Problematik wird durch die zunehmende Menge und Komplexität der gesammelten Daten noch verstärkt.
+
+%Ein weiteres zentrales Problem ist die Akzeptanz und das Vertrauen in synthetische Daten innerhalb der öffentlichen Verwaltung. Entscheider und Analysten müssen überzeugt sein, dass synthetische Daten eine verlässliche und valide Grundlage für ihre Analysen bieten. Dies erfordert umfassende Tests und Validierungen, um die Qualität und Integrität der synthetischen Daten sicherzustellen.
+
+\end{spacing}
+\section{Zieldefinition und Erfolgskriterien}
+\begin{spacing}{1.5}
+
+Das Hauptziel dieser Arbeit besteht darin, die Rolle synthetischer Daten in kommunalen Datenbeständen zu untersuchen und zu evaluieren, wie diese Daten genutzt werden können, um den Datenschutz zu gewährleisten und gleichzeitig die analytische Nutzbarkeit zu verbessern. Dabei sollen die spezifischen Anforderungen und Herausforderungen, die sich aus der Anwendung synthetischer Daten in der öffentlichen Verwaltung ergeben, identifiziert und geeignete Lösungsansätze entwickelt werden. Es soll untersucht werden, wie synthetische Daten im Vergleich zu traditionellen Anonymisierungsmethoden abschneiden und ob sie eine verlässliche Alternative darstellen, um den Schutz personenbezogener Daten zu verbessern, ohne die Qualität und Nutzbarkeit der Daten zu beeinträchtigen.
+
+Ein weiteres Ziel ist die praktische Implementierung und Bewertung synthetischer Daten am Beispiel der öffentlichen Verwaltung. Hierbei soll ein Synthesizer-Tool ausgewählt und spezifiziert werden, das in der Lage ist, qualitativ hochwertige synthetische Zensusdaten zu generieren. Diese Implementierung soll die theoretischen Überlegungen untermauern und konkrete Einblicke in die Anwendbarkeit und Leistungsfähigkeit synthetischer Daten in einem realen Szenario bieten.
+
+Die Erfolgskriterien dieser Arbeit umfassen mehrere Dimensionen:
+
+\begin{enumerate}
+    \item Datenschutz: Die synthetischen Daten müssen die Datenschutzanforderungen gemäß \acrshort{dsgvo} und \acrshort{bdsg} erfüllen. Dies beinhaltet die Minimierung des Risikos einer Re-Identifizierung und den Schutz der Privatsphäre der betroffenen Personen.
+    \item Datenqualität: Die synthetischen Daten sollen die statistischen Eigenschaften und Strukturen der Originaldaten möglichst genau widerspiegeln. Dies umfasst die Beibehaltung von Korrelationen, Verteilungen und anderen relevanten Datenmerkmalen, die für analytische Zwecke wichtig sind.\newpage
+    \item Nutzbarkeit: Die synthetischen Daten müssen für die gleichen Analysen und Anwendungen geeignet sein wie die Originaldaten. Dies bedeutet, dass sie in der Praxis ähnliche Ergebnisse liefern und für die Entscheidungsfindung in der öffentlichen Verwaltung brauchbar sein müssen.
+\end{enumerate}
+
+Neben diesen Kriterien ist anzumerken, dass die organisatorische Implementierbarkeit sowie die Akzeptanz seitens der Beteiligten ebenfalls entscheidende Faktoren für den Erfolg synthetischer Daten in der öffentlichen Verwaltung darstellen. Diese Aspekte sind jedoch äußerst komplex und würden den Rahmen dieser Seminararbeit überschreiten. Daher werden sie in dieser Arbeit nicht näher untersucht und bleiben Gegenstand zukünftiger Forschungen.
+
+\end{spacing}

@@ -1,0 +1,188 @@
+% Dokumentklasse
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[left= 4cm,right = 2cm, bottom = 4 cm]{geometry}
+
+% ============= Packages =============
+
+% Dokumentinformationen
+\usepackage[
+	pdftitle={Zwischen Datenschutz und analytischer Nutzbarkeit: Die Rolle synthetischer Daten in kommunalen Datenbeständen},
+	pdfauthor={Fabian Weiß},
+	hidelinks
+]{hyperref}
+
+% Einstellung für Code-Snippets
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  frameround=tttt,
+  columns=fullflexible,
+  captionpos=b,
+  showstringspaces=false,
+  tabsize=2,
+  escapeinside={(*@}{@*)}, % to allow LaTeX commands within the listing
+  xleftmargin=0.03\textwidth,
+  xrightmargin=0.03\textwidth
+}
+\usepackage{minted}
+\setminted{fontsize=\footnotesize}
+\setminted[]{breaklines}
+\usemintedstyle{friendly}
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx, subfig}
+\usepackage{pdfpages}
+\usepackage{silence}
+\WarningFilter{scrreprt}{Usage of package `fancyhdr'}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{lipsum}
+\usepackage{comment}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{fancyvrb}
+\usepackage[
+    backend=biber,
+    citestyle=numeric,
+    bibstyle=authoryear,
+    sorting=none,
+    dashed=false
+  ]{biblatex}
+\addbibresource{Literatur.bib}
+\DeclareNameAlias{sortname}{first-last}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+\emergencystretch=1em % Löst Zeilenumbruch-Probleme auf
+\usepackage{ntheorem}
+\theoremseparator{:}
+\newtheorem{hyp}{Hypothese}
+
+% Abkürzungen für Abkürzungsverzeichnis
+\usepackage[acronym]{glossaries}
+%\makenoidxglossaries
+\makeglossaries
+\newacronym{bdsg}{BDSG}{Bundesdatenschutzgesetz}
+\newacronym{ctgan}{CTGAN}{Conditional Tabular GAN}
+\newacronym{dgm}{DGM}{Deep Generative Model}
+\newacronym{dsgvo}{DSGVO}{Datenschutz-Grundverordnung}
+\newacronym{egovg}{EGovG}{E-Government-Gesetz}
+\newacronym{gan}{GAN}{Generative Adversarial Network}
+\newacronym{sdv}{SDV}{Synthetic Data Vault}
+\newacronym{vae}{VAE}{Variational Autoencoder}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\lhead{}
+\chead{}
+\rhead{\slshape \leftmark}
+%%
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+%Besondere Trennungen
+\hyphenation{syn-the-ti-schen}
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+\pagestyle{empty}
+
+\include{_titel}
+
+%\include{00_abstract}
+
+% pagestyle für gesamtes Dokument aktivieren
+\pagestyle{fancy}
+
+%Inhaltsverzeichnis
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+
+%Abbildungsverzeichnis
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+
+%Tabellenverzeichnis
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables
+\newpage
+
+%Abkürzungsverzeichnis
+%\setglossarystyle{super3col}
+%\printnoidxglossary[title={Abkürzungsverzeichnis}, type=acronym]
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\printglossary[title={Abkürzungsverzeichnis}, type=\acronymtype]
+
+%Genderhinweis
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\vfill
+\subsubsection*{Hinweis}
+Zur besseren Lesbarkeit wird in dieser Arbeit das generische Maskulinum verwendet. Die in dieser Arbeit verwendeten Personenbezeichnungen beziehen sich – sofern nicht anders kenntlich gemacht – auf alle Geschlechter.
+\newpage
+
+\include{01_einleitung}
+
+\include{02_theorie}
+
+\include{03_anforderungsanalyse}
+
+\include{04_fallbeispiel}
+
+\include{05_evaluation}
+
+\include{06_diskussion}
+
+\include{07_fazit}
+
+\pagestyle{plain}
+
+\include{08_anhang}
+
+\pagestyle{fancy}
+
+%Literaturverzeichnis
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+%\addcontentsline*{toc}{section}{Literatur}
+%\section*{Literatur}
+\printbibliography[heading=bibintoc, title={Literatur}]
+%\printbibliography
+
+\include{09_erklaerung}
+
+\end{document}
